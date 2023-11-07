@@ -1,6 +1,6 @@
 module "identity_center_dpc" {
   source = "github.com/siakan1107/INFRA-121754699974-DPC"
-#   version = "1.0.1"
+#   version = "1.0.1" 
 
   tfc_hostname            = var.tfc_hostname
   tfc_organization_name   = var.tfc_organization_name
