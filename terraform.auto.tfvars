@@ -6,5 +6,6 @@ dpc_name                = "identity_center"
 vcs_repo_identifier     = "siakan1107/infra-121754699974-identitycenter"
 vcs_repo_oauth_token_id = "ot-gZ8WnNTbRFDhkJtn"
 # managed_policies        = ["AdministratorAccess", "IAMFullAccess"]
-custom_policies         = ["test1", "test2"]
+managed_policies = [null]
+custom_policies  = ["test1", "test2"]
   
