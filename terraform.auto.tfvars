@@ -8,7 +8,6 @@ managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
 # managed_policies        = []
 custom_policies = { 
  choi = <<EOF
- jsonencode(
         {
     "Version": "2012-10-17",
     "Statement": [
@@ -18,7 +17,7 @@ custom_policies = {
             "Resource": "*"
         }
     ]
-})
+}
     EOF
 } 
 
