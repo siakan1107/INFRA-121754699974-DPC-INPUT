@@ -6,20 +6,7 @@ dpc_name              = "identity_center"
 vcs_repo_identifier   = "siakan1107/infra-121754699974-identitycenter"
 managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
 # managed_policies        = []
-custom_policies = { 
- choi = <<EOF
-        {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "*",
-            "Resource": "*"
-        }
-    ]
-}
-    EOF
-} 
+custom_policies = "test"
 
 #oauth_token_id = "ot-gZ8WnNTbRFDhkJtn"
 

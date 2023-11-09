@@ -47,19 +47,6 @@ variable "managed_policies" {
 # }
 
 variable "custom_policies" {
-  type = map(string)
-  default = {
-    choi = <<EOF
-        {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "*",
-            "Resource": "*"
-        }
-    ]
-}
-    EOF
-  }
+  type = string
+  default = "test"
 }
