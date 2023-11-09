@@ -47,22 +47,29 @@ variable "managed_policies" {
 # }
 
 variable "custom_policies" {
-  type = map(object({
-    Version   = string
-    Statement = list(any)
-  }))
+  type = map(string)
   default = {
-    choi = {
-      Version = "2012-10-17"
-      Statement = [
+    choi = <<EOF
         {
-          Effect = "Allow"
-          Action  = "iam:CreateServiceLinkedRole"
-          Resource = "arn:aws:iam::*:role/aws-service-role/ipam.amazonaws.com/AWSServiceRoleForIPAM*"
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": "iam:CreateServiceLinkedRole",
+              "Resource": "arn:aws:iam::*:role/aws-service-role/ipam.amazonaws.com/AWSServiceRoleForIPAM*",
+              "Condition": {"StringLike": {"iam:AWSServiceName": "ipam.amazonaws.com"}}
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "iam:AttachRolePolicy",
+                  "iam:PutRolePolicy"
+              ],
+              "Resource": "arn:aws:iam::*:role/aws-service-role/ipam.amazonaws.com/AWSServiceRoleForIPAM*"
+                }
+          ]
         }
-      ]
-    }
-
+    EOF
   }
   description = "The name of your custom_policies"
 }
