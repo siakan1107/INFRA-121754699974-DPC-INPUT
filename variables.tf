@@ -71,7 +71,7 @@ variable "custom_policies" {
           ]
           Effect   = "Allow"
           Resource = "*"
-        },
+        }
       ]
     },
   }
