@@ -71,5 +71,4 @@ variable "custom_policies" {
         }
     EOF
   }
-  description = "The name of your custom_policies"
 }
