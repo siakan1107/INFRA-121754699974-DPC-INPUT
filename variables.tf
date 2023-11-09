@@ -46,33 +46,20 @@ variable "managed_policies" {
 #   description = "The name of your custom_policies"
 # }
 
-
 variable "custom_policies" {
   type = map(string)
   default = {
-    "name1" = {
-      Version = "2012-10-17"
-      Statement = [
+    choi = jsonencode({
+      "Version" : "2012-10-17",
+      "Statement" : [
         {
-          Action = [
-            "ec2:Describe*",
-          ]
-          Effect   = "Allow"
-          Resource = "*"
-        },
-      ]
-    },
-    "name2" = {
-      Version = "2012-10-17"
-      Statement = [
-        {
-          Action = [
-            "ec2:Describe*",
-          ]
-          Effect   = "Allow"
-          Resource = "*"
+          "Effect" : "Allow",
+          "Action" : "*",
+          "Resource" : "*"
         }
       ]
-    },
+    })
+
   }
+  description = "The name of your custom_policies"
 }
