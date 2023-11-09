@@ -47,7 +47,7 @@ variable "managed_policies" {
 # }
 
 variable "custom_policies" {
-  type = map(object)
+  type = map(string)
   default = {
     "name1" = {
       Version = "2012-10-17"
