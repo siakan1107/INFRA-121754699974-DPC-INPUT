@@ -47,18 +47,21 @@ variable "managed_policies" {
 # }
 
 variable "custom_policies" {
-  type = map(string)
+  type = map(object({
+    Version   = string
+    Statement = list(any)
+  }))
   default = {
-    choi = jsonencode({
-      "Version" : "2012-10-17",
-      "Statement" : [
+    choi = {
+      Version = "2012-10-17"
+      Statement = [
         {
-          "Effect" : "Allow",
-          "Action" : "*",
-          "Resource" : "*"
+          Effect = "Allow"
+          Action  = "iam:CreateServiceLinkedRole"
+          Resource = "arn:aws:iam::*:role/aws-service-role/ipam.amazonaws.com/AWSServiceRoleForIPAM*"
         }
       ]
-    })
+    }
 
   }
   description = "The name of your custom_policies"
