@@ -9,24 +9,15 @@ managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
 custom_policies = { 
  choi = <<EOF
         {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-              "Effect": "Allow",
-              "Action": "iam:CreateServiceLinkedRole",
-              "Resource": "arn:aws:iam::*:role/aws-service-role/ipam.amazonaws.com/AWSServiceRoleForIPAM*",
-              "Condition": {"StringLike": {"iam:AWSServiceName": "ipam.amazonaws.com"}}
-          },
-          {
-              "Effect": "Allow",
-              "Action": [
-                  "iam:AttachRolePolicy",
-                  "iam:PutRolePolicy"
-              ],
-              "Resource": "arn:aws:iam::*:role/aws-service-role/ipam.amazonaws.com/AWSServiceRoleForIPAM*"
-                }
-          ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
         }
+    ]
+}
     EOF
 } 
 
