@@ -36,11 +36,11 @@ variable "vcs_repo_oauth_token_id" {
 
 variable "managed_policies" {
   type        = list(string)
-  default     = []
+  default     = ["AdministratorAccess", "IAMFullAccess"]
   description = "The name of your managed_policie"
 }
 
 variable "custom_policies" {
-  type = map(string)
+  type    = map(string)
   default = {}
 }
