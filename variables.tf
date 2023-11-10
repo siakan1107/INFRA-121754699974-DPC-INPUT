@@ -40,13 +40,7 @@ variable "managed_policies" {
   description = "The name of your managed_policie"
 }
 
-# variable "custom_policies" {
-#   type        = map(string)
-#   default     = []
-#   description = "The name of your custom_policies"
-# }
-
 variable "custom_policies" {
-  type = string
-  default = "test"
+  type = map(string)
+  default = {}
 }

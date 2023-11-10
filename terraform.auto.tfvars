@@ -6,7 +6,8 @@ dpc_name              = "identity_center"
 vcs_repo_identifier   = "siakan1107/infra-121754699974-identitycenter"
 managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
 # managed_policies        = []
- custom_policies = <<EOF
+ custom_policies = { 
+    test1 = <<EOF
 {
     "Version": "2012-10-17",
     "sid" : "test",
@@ -23,6 +24,6 @@ managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
     ]
 }
 EOF
-
+ }
 
 
