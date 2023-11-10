@@ -9,8 +9,8 @@ module "identity_center_dpc" {
   vcs_repo_identifier     = var.vcs_repo_identifier
   managed_policies        = var.managed_policies
   # custom_policies         = var.custom_policies 
-  custom_policies = local.testvalue2
-  
+   custom_policies = {test1 =file("policy/test1.json"), test2=file("policy/test2.json")}
+
 
 }
 
