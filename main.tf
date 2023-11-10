@@ -8,7 +8,7 @@ module "identity_center_dpc" {
   dpc_name                = var.dpc_name
   vcs_repo_identifier     = var.vcs_repo_identifier
   managed_policies        = var.managed_policies
-  custom_policies         = var.custom_policies 
+  custom_policies         = local.custom_policies 
 
 }
 
