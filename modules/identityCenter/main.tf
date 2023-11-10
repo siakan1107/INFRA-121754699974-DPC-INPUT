@@ -7,5 +7,5 @@ module "identity_center" {
   dpc_name                    = var.dpc_name
   vcs_repo_identifier         = var.vcs_repo_identifier
   managed_policies            = var.managed_policies
-  custom_policies       = { test1 = file("policy/test1.json"), test2 = file("policy/test2.json") }
+  custom_policies = {test1 =file("${path.module}/policy/test1.json"), test2=file("${path.module}/policy/test1.json")}
 }
