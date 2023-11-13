@@ -5,8 +5,6 @@ module "openIdConnect" {
 module "identityCenter" {
   source = "github.com/siakan1107/INFRA-121754699974-DPC"
 
-  depends_on = [module.openIdConnect]
-
   tfc_hostname          = "app.terraform.io"
   tfc_organization_name = "CT_TEST_KB"
   tfc_project_name      = "Testkkb"
@@ -21,8 +19,6 @@ module "identityCenter" {
 
 module "organizatioin" {
   source = "github.com/siakan1107/INFRA-121754699974-DPC"
-
-  depends_on = [module.openIdConnect]
 
   tfc_hostname          = "app.terraform.io"
   tfc_organization_name = "CT_TEST_KB"
