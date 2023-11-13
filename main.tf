@@ -10,9 +10,9 @@ module "identityCenter" {
   tfc_project_name      = "Testkkb"
   dpc_name              = "identityCenter"
   vcs_repo_identifier   = "siakan1107/infra-121754699974-identitycenter"
-  managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
-  # custom_policies       = { test1 = file("${path.module}/modules/policies/test1.json"), test2 = file("${path.module}/modules/policies/test2.json") }
-  custom_policies             = {}
+  managed_policies      = []
+  # managed_policies      = ["AdministratorAccess", "IAMFullAccess"]
+  custom_policies             = { test1 = file("${path.module}/modules/policies/test1.json"), test2 = file("${path.module}/modules/policies/test2.json") }
   tfc_provider_arn            = module.openIdConnect.tfc_provider_arn
   tfc_provider_client_id_list = module.openIdConnect.tfc_provider_client_id_list
 }
