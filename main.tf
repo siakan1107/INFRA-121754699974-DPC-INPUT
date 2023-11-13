@@ -19,6 +19,8 @@ module "identityCenter" {
 module "organizatioin" {
   source = "github.com/siakan1107/INFRA-121754699974-DPC"
 
+  depends_on = [module.identityCenter]
+
   tfc_hostname          = "app.terraform.io"
   tfc_organization_name = "CT_TEST_KB"
   tfc_project_name      = "Testkkb"
