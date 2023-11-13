@@ -32,5 +32,5 @@ module "organizatioin" {
   custom_policies       = {}
 
   tfc_provider_arn            = module.openIdConnect.tfc_provider_arn
-  tfc_provider_client_id_list = module.openIdConnect.tfc_provider_client_id_list
+  tfc_provider_client_id_list = [module.openIdConnect.tfc_provider_client_id_list]
 }
