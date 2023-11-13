@@ -1,3 +1,0 @@
-module "dpc" {
-  source = "./modules"
-}
