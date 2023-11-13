@@ -10,5 +10,5 @@ module "identityCenter" {
   custom_policies       = { test1 = file("${path.module}/task/policies/test1.json"), test2 = file("${path.module}/task/policies/test2.json") }
 
   tfc_provider_arn            = module.openIdConnect.tfc_provider_arn
-  tfc_provider_client_id_list = [module.openIdConnect.tfc_provider_client_id_list]
+  tfc_provider_client_id_list = module.openIdConnect.tfc_provider_client_id_list
 }
